@@ -102,7 +102,7 @@ export default function Page() {
           <h1 className="mt-6 text-center text-4xl font-extrabold leading-[0.95] sm:text-5xl">
             Achou,
             <br />
-            ganhou!
+            Ganhou!
           </h1>
 
           <p className="mt-4 text-center text-base leading-relaxed text-[#9B1C4B]/90 sm:text-lg">
@@ -154,7 +154,7 @@ export default function Page() {
               <h1 className="mt-8 text-[64px] font-extrabold leading-[0.95]">
                 Achou,
                 <br />
-                ganhou!
+                Ganhou!
               </h1>
 
               <p className="mt-6 max-w-xl text-lg text-[#9B1C4B]/90">
