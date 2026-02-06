@@ -1,7 +1,7 @@
 // src/app/page.tsx
 
 const PROMO = {
-  period: "01/03/2026 a 31/03/2026",
+  period: "18/02/2026 a 31/03/2026",
   coverage: "Todo o território nacional",
   rulesUrl: "/regulamento.pdf",
   sacPhoneDisplay: "(28) 99917-1087",
@@ -96,7 +96,7 @@ export default function Page() {
           <div className="mt-6 flex flex-wrap justify-center gap-2">
             <Chip>Promoção nacional</Chip>
             <Chip>Contemplação imediata</Chip>
-            <Chip>Março/2026</Chip>
+            <Chip>18/02/2026 a 31/03/2026</Chip>
           </div>
 
           <h1 className="mt-6 text-center text-4xl font-extrabold leading-[0.95] sm:text-5xl">
@@ -148,7 +148,7 @@ export default function Page() {
               <div className="flex flex-wrap gap-3">
                 <Chip>Promoção nacional</Chip>
                 <Chip>Contemplação imediata</Chip>
-                <Chip>Março/2026</Chip>
+                <Chip>18/02/2026 a 31/03/2026</Chip>
               </div>
 
               <h1 className="mt-8 text-[64px] font-extrabold leading-[0.95]">
