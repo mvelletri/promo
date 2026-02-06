@@ -1,156 +1,212 @@
+// src/app/page.tsx
+
+const PROMO = {
+  period: "01/03/2026 a 31/03/2026",
+  coverage: "Todo o território nacional",
+  rulesUrl: "/regulamento.pdf",
+  sacPhoneDisplay: "(28) 99917-1087",
+  sacPhoneTel: "+5528999171087",
+};
+
+function Chip({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex items-center rounded-full border border-[#9B1C4B]/20 bg-white px-4 py-2 text-xs font-semibold text-[#9B1C4B] sm:text-sm">
+      {children}
+    </span>
+  );
+}
+
+function PrimaryCTA() {
+  return (
+    <a
+      href={PROMO.rulesUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="
+        inline-flex w-full items-center justify-center
+        rounded-full
+        bg-[#9B1C4B] px-8 py-4
+        text-sm font-extrabold text-white
+        shadow-[0_18px_40px_rgba(155,28,75,0.25)]
+        hover:bg-[#C4376A]
+        transition
+        sm:w-auto sm:text-base
+      "
+    >
+      Regulamento completo (PDF)
+    </a>
+  );
+}
+
+function HowItWorksCard() {
+  return (
+    <div className="rounded-[28px] border border-[#9B1C4B]/15 bg-white/70 p-6 shadow-md">
+      <div className="text-sm font-extrabold uppercase tracking-wide text-[#9B1C4B]">
+        Como funciona
+      </div>
+      <ol className="mt-4 space-y-2 text-sm text-[#9B1C4B]/90 sm:text-base">
+        <li>
+          <strong>1.</strong> Compre qualquer <strong>Gel Construtor Beltrat</strong>
+        </li>
+        <li>
+          <strong>2.</strong> Confira o fundo da parte interior do pote
+        </li>
+        <li>
+          <strong>3.</strong> Achou a mensagem premiada? <strong>Ganhou!</strong>
+        </li>
+      </ol>
+    </div>
+  );
+}
+
+function FooterInline() {
+  return (
+    <footer className="mt-10 text-center text-xs text-[#9B1C4B]/70 sm:text-sm">
+      Promoção válida de <strong>{PROMO.period}</strong> • {PROMO.coverage}
+      <br />
+      SAC Beltrat:{" "}
+      <a className="underline" href={`tel:${PROMO.sacPhoneTel}`}>
+        {PROMO.sacPhoneDisplay}
+      </a>
+    </footer>
+  );
+}
+
 export default function Page() {
   return (
-    <main className="min-h-screen bg-white text-zinc-900">
-      {/* Header */}
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl bg-zinc-900" />
-          <span className="text-sm font-semibold tracking-tight">Promo Demo</span>
-        </div>
-
-        <a
-          href="#cta"
-          className="rounded-xl bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
-        >
-          Falar agora
-        </a>
-      </header>
-
-      {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 pb-10 pt-6">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="mb-3 inline-flex rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700">
-              Landing page demo • rápida • objetiva
-            </p>
-
-            <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-              Um título claro que explica seu valor em 1 frase.
-            </h1>
-
-            <p className="mt-4 text-base leading-relaxed text-zinc-600">
-              Use esse espaço pra dizer <strong>o que você faz</strong>, <strong>pra quem</strong> e
-              <strong> qual benefício principal</strong>. Sem enrolar.
-            </p>
-
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#cta"
-                className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
-              >
-                Quero um orçamento
-              </a>
-
-              <a
-                href="#beneficios"
-                className="rounded-xl border border-zinc-200 px-5 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-50"
-              >
-                Ver benefícios
-              </a>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-3 text-xs text-zinc-500">
-              <span className="rounded-full border border-zinc-200 px-3 py-1">Resposta rápida</span>
-              <span className="rounded-full border border-zinc-200 px-3 py-1">Sem compromisso</span>
-              <span className="rounded-full border border-zinc-200 px-3 py-1">Atendimento premium</span>
-            </div>
+    <main className="min-h-screen bg-gradient-to-b from-[#FFF7FA] via-[#FDECF2] to-[#F8DCE6] text-[#9B1C4B]">
+      {/* ======================
+          MOBILE + TABLET (< lg)
+          ====================== */}
+      <section className="px-5 pb-12 pt-8 lg:hidden">
+        <div className="mx-auto w-full max-w-md sm:max-w-xl md:max-w-2xl">
+          <div className="flex justify-center">
+            <img
+              src="/wobbler.png"
+              alt="Promoção Achou Ganhou Beltrat"
+              className="
+                w-[360px]
+                sm:w-[420px]
+                md:w-[480px]
+                drop-shadow-[0_22px_55px_rgba(0,0,0,0.18)]
+              "
+            />
           </div>
 
-          {/* Visual */}
-          <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
-            <div className="aspect-[4/3] w-full rounded-2xl bg-white shadow-sm" />
-            <p className="mt-4 text-sm text-zinc-600">
-              Aqui pode entrar uma imagem do produto/serviço, um mock, ou um print bonito.
-            </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <Chip>Promoção nacional</Chip>
+            <Chip>Contemplação imediata</Chip>
+            <Chip>Março/2026</Chip>
           </div>
-        </div>
-      </section>
 
-      {/* Benefits */}
-      <section id="beneficios" className="mx-auto max-w-6xl px-6 py-14">
-        <h2 className="text-2xl font-semibold tracking-tight">Por que escolher a gente?</h2>
-        <p className="mt-2 text-sm text-zinc-600">
-          3–6 bullets diretos, focados no que o cliente ganha.
-        </p>
+          <h1 className="mt-6 text-center text-4xl font-extrabold leading-[0.95] sm:text-5xl">
+            Achou,
+            <br />
+            ganhou!
+          </h1>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {[
-            { title: "Benefício 1", desc: "Uma frase curta explicando o benefício principal." },
-            { title: "Benefício 2", desc: "Algo sobre qualidade, experiência ou agilidade." },
-            { title: "Benefício 3", desc: "Algo sobre garantia, confiança ou resultado." },
-          ].map((item) => (
-            <div key={item.title} className="rounded-2xl border border-zinc-200 bg-white p-6">
-              <h3 className="text-base font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm text-zinc-600">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="border-y border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <h2 className="text-2xl font-semibold tracking-tight">Prova social</h2>
-          <p className="mt-2 text-sm text-zinc-600">
-            Depoimentos curtos ou números (ex: NPS, entregas, avaliações).
+          <p className="mt-4 text-center text-base leading-relaxed text-[#9B1C4B]/90 sm:text-lg">
+            Compre um <strong>Gel Construtor Beltrat</strong> e confira o fundo do pote.
+            Você pode encontrar a mensagem premiada e ganhar{" "}
+            <strong>1 Gel</strong> ou uma <strong>visita exclusiva à fábrica</strong>.
           </p>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              { name: "Cliente A", text: "“Experiência excelente do começo ao fim.”" },
-              { name: "Cliente B", text: "“Rápido, organizado e com acabamento impecável.”" },
-              { name: "Cliente C", text: "“Atendimento acima da média. Recomendo.”" },
-            ].map((t) => (
-              <div key={t.name} className="rounded-2xl border border-zinc-200 bg-white p-6">
-                <p className="text-sm text-zinc-700">{t.text}</p>
-                <p className="mt-4 text-xs font-medium text-zinc-500">{t.name}</p>
+          <div className="mt-6 flex justify-center">
+            <PrimaryCTA />
+          </div>
+
+          <div className="mt-8">
+            <HowItWorksCard />
+          </div>
+
+          <div className="mt-6 text-center text-sm text-[#9B1C4B]/80 sm:text-base">
+            Período: <strong>{PROMO.period}</strong> • {PROMO.coverage}
+          </div>
+
+          <FooterInline />
+        </div>
+      </section>
+
+      {/* ======================
+          DESKTOP (lg+)
+          ✅ sem aspect fixo / sem footer absoluto
+          ====================== */}
+      <section className="hidden lg:flex min-h-screen w-full items-center justify-center px-10 py-10">
+        <div
+          className="
+            relative w-full max-w-[1920px]
+            rounded-[56px] bg-white shadow-xl overflow-hidden
+          "
+        >
+          {/* Fundo suave */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FFF7FA] via-[#FDECF2] to-[#F8DCE6]" />
+
+          {/* Conteúdo (agora com altura livre) */}
+          <div className="relative grid grid-cols-12 gap-10 p-14">
+            {/* LEFT */}
+            <div className="col-span-5 flex flex-col justify-center">
+              <div className="flex flex-wrap gap-3">
+                <Chip>Promoção nacional</Chip>
+                <Chip>Contemplação imediata</Chip>
+                <Chip>Março/2026</Chip>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section id="cta" className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-3xl border border-zinc-200 bg-white p-8 md:p-10">
-          <div className="grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight">
-                Pronto pra dar o próximo passo?
-              </h2>
-              <p className="mt-2 text-sm text-zinc-600">
-                Coloque aqui um reforço de confiança + o que acontece depois do clique.
+              <h1 className="mt-8 text-[64px] font-extrabold leading-[0.95]">
+                Achou,
+                <br />
+                ganhou!
+              </h1>
+
+              <p className="mt-6 max-w-xl text-lg text-[#9B1C4B]/90">
+                Compre um <strong>Gel Construtor Beltrat</strong> e confira o fundo do pote.
+                Você pode encontrar a mensagem premiada e ganhar{" "}
+                <strong>1 Gel</strong> ou uma <strong>visita exclusiva à fábrica</strong>.
               </p>
+
+              <div className="mt-10">
+                <PrimaryCTA />
+              </div>
+
+              <div className="mt-6">
+                <HowItWorksCard />
+              </div>
+
+              <div className="mt-4 text-sm text-[#9B1C4B]/70">
+                Período: <strong>{PROMO.period}</strong> • {PROMO.coverage}
+              </div>
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-              <a
-                href="https://wa.me/5500000000000?text=Olá!%20Quero%20saber%20mais."
-                className="rounded-xl bg-zinc-900 px-5 py-3 text-center text-sm font-medium text-white hover:bg-zinc-800"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Chamar no WhatsApp
-              </a>
-
-              <a
-                href="#beneficios"
-                className="rounded-xl border border-zinc-200 px-5 py-3 text-center text-sm font-medium text-zinc-900 hover:bg-zinc-50"
-              >
-                Revisar benefícios
-              </a>
+            {/* RIGHT */}
+            <div className="col-span-7 flex items-center justify-center">
+              <img
+                src="/wobbler.png"
+                alt="Promoção Achou Ganhou Beltrat"
+                className="
+                  w-[620px]
+                  xl:w-[740px]
+                  2xl:w-[800px]
+                  drop-shadow-[0_40px_80px_rgba(0,0,0,0.20)]
+                "
+              />
             </div>
           </div>
+
+          {/* Footer agora dentro do fluxo (nunca cobre conteúdo) */}
+          <footer className="relative border-t border-[#9B1C4B]/10 bg-white/70 px-14 py-5 text-sm text-[#9B1C4B]/70 backdrop-blur">
+            <div className="flex items-center justify-between">
+              <span>
+                Promoção válida de <strong>{PROMO.period}</strong> • {PROMO.coverage}
+              </span>
+              <span>
+                SAC Beltrat:{" "}
+                <a className="underline" href={`tel:${PROMO.sacPhoneTel}`}>
+                  {PROMO.sacPhoneDisplay}
+                </a>
+              </span>
+            </div>
+          </footer>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="mx-auto max-w-6xl px-6 py-10">
-        <div className="flex flex-col gap-2 border-t border-zinc-200 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Promo Demo</span>
-          <span>Contato • Termos • Privacidade</span>
-        </div>
-      </footer>
     </main>
   );
 }
